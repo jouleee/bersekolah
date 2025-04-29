@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Bersekolah</title>
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <style>
+        /* Color Palette */
+        :root {
+        --blue: #406386;
+        --dark-blue: #354D7E;
+        --teal: #85C2B1;
+        --light-blue: #697797;
+        --white: #F3F1EF;
+        }
+
+        /* Contact Hero Section Styles */
+        .contact-hero {
+        background: linear-gradient(135deg, var(--blue) 0%, var(--dark-blue) 100%);
+        color: var(--white);
+        padding: 80px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        }
+
+        .contact-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.5;
+        }
+
+        .contact-hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+        color: white;
+        }
+
+        .contact-hero h1::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--teal);
+        border-radius: 2px;
+        }
+
+        .contact-hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
+        margin-top: 30px;
+        }
+
+        /* Contact Section Styles */
+        .contact-section {
+        padding: 80px 0;
+        background-color: var(--white);
+        }
+
+        .contact-section h2{
+            color: #406386;
+        }
+
+        .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        }
+
+        .contact-info {
+        flex: 1;
+        min-width: 300px;
+        }
+
+        .info-title {
+        font-size: 2rem;
+        color: var(--dark-blue);
+        margin-bottom: 30px;
+        position: relative;
+        padding-bottom: 15px;
+        }
+
+        .info-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: var(--teal);
+        }
+
+        .contact-card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        padding: 30px;
+        margin-bottom: 30px;
+        }
+
+        .info-item {
+        display: flex;
+        margin-bottom: 25px;
+        }
+
+        .info-item:last-child {
+        margin-bottom: 0;
+        }
+
+        .info-icon {
+        flex: 0 0 50px;
+        height: 50px;
+        background-color: rgba(133, 194, 177, 0.15);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        }
+
+        .info-icon svg {
+        width: 24px;
+        height: 24px;
+        fill: var(--teal);
+        }
+
+        .info-content h4 {
+        color: var(--dark-blue);
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        }
+
+        .info-content p {
+        color: var(--light-blue);
+        margin-bottom: 5px;
+        line-height: 1.5;
+        }
+
+        .info-content p:last-child {
+        margin-bottom: 0;
+        }
+
+        .info-content a {
+        color: var(--blue);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        }
+
+        .info-content a:hover {
+        color: var(--teal);
+        }
+
+        .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+        }
+
+        .social-icon {
+        width: 36px;
+        height: 36px;
+        background-color: rgba(64, 99, 134, 0.1); /* Background selalu terlihat */
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+        background-color: var(--blue);
+        }
+
+        .social-icon svg {
+        width: 18px;
+        height: 18px;
+        fill: var(--blue);
+        transition: fill 0.3s ease;
+        }
+
+        .social-icon:hover svg {
+        fill: white;
+        }
+
+        .map-container {
+        flex: 1;
+        min-width: 300px;
+        height: 450px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info .btn {
+        display: inline-block;
+        background-color: var(--teal);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 20px;
+        box-shadow: 0 4px 10px rgba(133, 194, 177, 0.3);
+        }
+
+        .contact-info .btn:hover {
+        background-color: var(--blue);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(64, 99, 134, 0.4);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+        .contact-hero {
+            padding: 60px 0;
+        }
+        
+        .contact-hero h1 {
+            font-size: 2.5rem;
+        }
+        
+        .contact-section {
+            padding: 60px 0;
+        }
+        
+        .contact-container {
+            flex-direction: column;
+        }
+        
+        .map-container {
+            height: 350px;
+        }
+        }
+
+        @media (max-width: 480px) {
+        .contact-hero h1 {
+            font-size: 2rem;
+        }
+        
+        .contact-hero p {
+            font-size: 1rem;
+        }
+        
+        .info-title {
+            font-size: 1.5rem;
+        }
+        
+        .contact-card {
+            padding: 20px;
+        }
+        
+        .info-icon {
+            flex: 0 0 40px;
+            height: 40px;
+        }
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/image/logo-bersekolah-08.png" alt="Bersekolah Logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="scholarship.html">Program Beasiswa</a></li>
+                    <li><a href="donation.html">Donasi</a></li>
+                    <li><a href="info-contact.html">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="nav-donate">
+                <a href="#" class="btn">Bergabung Bersama</a>
+            </div>
+        </div>
+    </header>
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Hubungi Kami</h1>
+            <p>Kami siap membantu menjawab pertanyaan dan mendengarkan saran Anda untuk meningkatkan program beasiswa Bersekolah</p>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2 class="info-title">Informasi Kontak</h2>
+                    
+                    <div class="contact-card">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h4>Alamat Kantor</h4>
+                                <p>Jl. Pendidikan No. 123, Kelurahan Cerdas</p>
+                                <p>Jakarta Selatan, 12345</p>
+                                <p>Indonesia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@bersekolah.org">info@bersekolah.org</a></p>
+                                <p><a href="mailto:beasiswa@bersekolah.org">beasiswa@bersekolah.org</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h4>Telepon</h4>
+                                <p><a href="tel:+6221555123456">+62 21 5551 23456</a> (Kantor)</p>
+                                <p><a href="tel:+6281234567890">+62 812 3456 7890</a> (WhatsApp)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h4>Media Sosial</h4>
+                                <div class="social-links">
+                                    <a href="https://instagram.com/bersekolah" class="social-icon" title="Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://twitter.com/bersekolah" class="social-icon" title="Twitter">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://facebook.com/bersekolah" class="social-icon" title="Facebook">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://youtube.com/bersekolah" class="social-icon" title="YouTube">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/6281234567890?text=Saya%20ingin%20mendapatkan%20informasi%20tentang%20Bersekolah" class="btn">Hubungi via WhatsApp</a>
+                </div>
+                
+                <div class="map-container">
+                    <!-- Placeholder for map -->
+                    <img src="/api/placeholder/600/450" alt="Peta lokasi kantor Bersekolah" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="assets/image/logo footer.png" alt="Bersekolah Logo">
+                    </div>
+                    <p style="margin-top: 20px;">Kami berkomitmen membantu pelajar yang bersemangat mewujudkan mimpi melalui program beasiswa dan donasi yang transparan.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Tautan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Beranda</a></li>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Program Beasiswa</a></li>
+                        <li><a href="#">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Program</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Beasiswa SMP</a></li>
+                        <li><a href="#">Beasiswa SMA</a></li>
+                        <li><a href="#">Program Mentoring</a></li>
+                        <li><a href="#">Program Donasi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Yayasan Insipirasi Semangat Sekolah. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+</main>
+
+</body>
+</html>
