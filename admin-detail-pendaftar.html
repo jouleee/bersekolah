@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detail Pendaftar - Admin Bersekolah</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+   
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="admin-header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/image/logo-bersekolah-08.png" alt="Bersekolah Logo" />
+        </a>
+      </div>
+      <div class="admin-info">
+        <div class="notification-icon">
+          <i class="fas fa-bell"></i>
+          <span class="notification-badge">3</span>
+        </div>
+        <div class="admin-profile">
+          <div class="admin-avatar">A</div>
+          <div class="admin-name">Admin</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Layout -->
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-menu">
+        <a href="admin-dashboard.html" class="menu-item">
+          <div class="menu-icon"><i class="fas fa-tachometer-alt"></i></div>
+          <span>Dashboard</span>
+        </a>
+        <a href="admin-pendaftar-beasiswa.html" class="menu-item active">
+          <div class="menu-icon"><i class="fas fa-user-graduate"></i></div>
+          <span>Pendaftar Beasiswa</span>
+        </a>
+        <a href="admin-kelola-halaman.html" class="menu-item">
+          <div class="menu-icon"><i class="fas fa-edit"></i></div>
+          <span>Kelola Halaman</span>
+        </a>
+        <a href="admin-mentor.html" class="menu-item">
+          <div class="menu-icon"><i class="fas fa-users"></i></div>
+          <span>Data Mentor</span>
+        </a>
+        <a href="admin-donasi.html" class="menu-item">
+          <div class="menu-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <span>Donasi</span>
+        </a>
+        <a href="admin-pengaturan-akun.html" class="menu-item">
+          <div class="menu-icon"><i class="fas fa-cog"></i></div>
+          <span>Pengaturan Akun</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <h1 class="page-title">Detail Pendaftar</h1>
+      
+      <div class="detail-card">
+        <h2>Informasi Pendaftar</h2>
+        <table class="detail-table">
+          <tr>
+            <th>Nama</th>
+            <td>Siti Nurhaliza</td>
+          </tr>
+          <tr>
+            <th>Jenjang</th>
+            <td>SMP</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>siti@mail.com</td>
+          </tr>
+          <tr>
+            <th>Tanggal Daftar</th>
+            <td>14 Mei 2025</td>
+          </tr>
+          <tr>
+            <th>Status</th>
+            <td><span class="status-badge status-waiting">Menunggu</span></td>
+          </tr>
+        </table>
+
+        <h2 style="margin-top: 2rem;">Berkas yang Diunggah</h2>
+        <ul class="file-list">
+          <li><i class="fas fa-file-pdf"></i> <a href="uploads/ijazah-siti.pdf" target="_blank">Ijazah Terakhir</a></li>
+          <li><i class="fas fa-file-alt"></i> <a href="uploads/rapor-siti.pdf" target="_blank">Rapor Semester Terakhir</a></li>
+          <li><i class="fas fa-file-image"></i> <a href="uploads/foto-siti.jpg" target="_blank">Pas Foto</a></li>
+          <li><i class="fas fa-file-alt"></i> <a href="uploads/surat-pengantar.pdf" target="_blank">Surat Pengantar</a></li>
+        </ul>
+
+        <div class="action-buttons">
+          <button class="btn btn-success"><i class="fas fa-check"></i> Terima</button>
+          <button class="btn btn-danger"><i class="fas fa-times"></i> Tolak</button>
+          <a href="admin-pendaftar-beasiswa.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Kembali</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

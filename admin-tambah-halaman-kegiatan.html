@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Donasi - Admin Dashboard Bersekolah</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Halaman - Admin Dashboard Bersekolah</title>
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- Pastikan path CSS benar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
-    <header  class="admin-header">
+    <header class="admin-header">
         <div class="container header-container">
             <div class="logo">
                 <a href="index.html">
@@ -34,7 +34,7 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-menu">
-                <a href="admin-dashboard.html" class="menu-item active">
+                <a href="admin-dashboard.html" class="menu-item">
                     <div class="menu-icon">
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
@@ -75,48 +75,47 @@
 
         <!-- Main Content -->
         <div class="main-content">
-            <h1 class="page-title">Riwayat Donasi</h1>
+            <h1 class="page-title">Tambah Halaman</h1>
 
-            <!-- Donasi Table -->
-            <div class="table-card">
-                <div class="table-header">
-                    <div class="table-title">Daftar Donasi Masuk</div>
+            <!-- Form Tambah Halaman -->
+            <div class="form-card">
+                <div class="form-header">
+                    <div class="form-title">Isi Data Halaman</div>
                 </div>
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Nama Donatur</th>
-                            <th>Email</th>
-                            <th>Jumlah Donasi</th>
-                            <th>Tanggal</th>
-                            <th>Metode Pembayaran</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Siti Aminah</td>
-                            <td>sitiaminah@gmail.com</td>
-                            <td>Rp 1.000.000</td>
-                            <td>03 Mei 2025</td>
-                            <td>Transfer Bank</td>
-                        </tr>
-                        <tr>
-                            <td>Anonim</td>
-                            <td>-</td>
-                            <td>Rp 500.000</td>
-                            <td>02 Mei 2025</td>
-                            <td>QRIS</td>
-                        </tr>
-                        <tr>
-                            <td>Fajar Nugroho</td>
-                            <td>fajarn@gmail.com</td>
-                            <td>Rp 250.000</td>
-                            <td>01 Mei 2025</td>
-                            <td>OVO</td>
-                        </tr>
-                        <!-- Tambahkan donasi lainnya sesuai kebutuhan -->
-                    </tbody>
-                </table>
+                <form action="#" method="POST" class="form-content">
+                    <div class="form-group">
+                        <label for="judul-hal">Judul Halaman</label>
+                        <input type="text" id="judul-hal" name="judul-hal" placeholder="Masukkan judul halaman" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="slug-hal">Slug</label>
+                        <input type="text" id="slug-hal" name="slug-hal" placeholder="Masukkan slug halaman (contoh: tentang-kami)" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tanggal-dibuat">Tanggal Dibuat</label>
+                        <input type="date" id="tanggal-dibuat" name="tanggal-dibuat" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status-hal">Status</label>
+                        <select id="status-hal" name="status-hal">
+                            <option value="draft">Draft</option>
+                            <option value="published">Dipublikasikan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gambar-hal">Gambar Halaman</label>
+                        <input type="file" id="gambar-hal" name="gambar-hal" accept="image/*">
+                    </div>
+
+                    <div class="form-group form-actions">
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <a href="admin-kelola-halaman.html" class="btn btn-secondary">Batal</a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

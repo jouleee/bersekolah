@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    
+
+   <div>
     <!-- Header -->
-    <header>
+    <header class="admin-header">
         <div class="container header-container">
             <div class="logo">
                 <a href="index.html">
@@ -28,8 +31,10 @@
             </div>
         </div>
     </header>
+   </div>
 
-    <!-- Main Layout -->
+   <div>
+        <!-- Main Layout -->
     <div class="admin-layout">
         <!-- Sidebar -->
         <div class="sidebar">
@@ -64,7 +69,7 @@
                     </div>
                     <span>Donasi</span>
                 </a>
-                <a href="admin-pengaturan akun.html" class="menu-item">
+                <a href="admin-pengaturan-akun.html" class="menu-item">
                     <div class="menu-icon">
                         <i class="fas fa-cog"></i>
                     </div>
@@ -94,6 +99,7 @@
                             <th>Tanggal Daftar</th>
                             <th>Status</th>
                             <th>Aksi</th>
+                            <th>Detail</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -101,14 +107,17 @@
                             <td>Siti Nurhaliza</td>
                             <td>SMP</td>
                             <td>siti@mail.com</td>
-                            <td>03 Mei 2025</td>
-                            <td><span class="status-badge status-approved">Diterima</span></td>
+                            <td>14 Mei 2025</td>
+                            <td><span class="status-badge status-waiting">Menunggu</span></td>
                             <td>
                                 <div class="action-buttons">
+                                    <button class="btn btn-small btn-success">Terima</button>
                                     <button class="btn btn-small btn-danger">Tolak</button>
                                 </div>
                             </td>
+                            <td><a href="admin-detail-pendaftar.html" class="status-badge status-waiting">Lihat Detail</a></td>
                         </tr>
+                        
                         <tr>
                             <td>Ahmad Fauzi</td>
                             <td>SMA</td>
@@ -121,12 +130,17 @@
                                     <button class="btn btn-small btn-danger">Tolak</button>
                                 </div>
                             </td>
+                            <td><a href="admin-detail-pendaftar.html" class="status-badge status-waiting">Lihat Detail</a></td>
                         </tr>
+                        
                         <!-- Tambahkan baris pendaftar lainnya di sini -->
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+   </div>
+
+    
 </body>
 </html>

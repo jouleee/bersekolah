@@ -7,10 +7,12 @@
 }
 
 body {
-    background-color: #F3F1EF;
-    color: #333;
-    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
 }
+
 
 .container {
     width: 90%;
@@ -90,10 +92,7 @@ header {
     padding: 15px 0;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-}
+
 
 .logo img {
     height: 55px;
@@ -164,7 +163,98 @@ nav ul li a:hover {
     margin-bottom: 30px;
     color: #666;
 }
+.detail-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 1rem;
+  }
 
+  table.detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+
+  .detail-table th, .detail-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .detail-table th {
+    background-color: #f7f7f7;
+    width: 200px;
+    color: #555;
+  }
+
+  .status-badge {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .status-waiting {
+    background-color: #ffc107;
+  }
+
+  .file-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+  }
+
+  .file-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .file-list i {
+    margin-right: 8px;
+    color: #444;
+  }
+
+  .action-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-success {
+    background-color: #28a745;
+    color: white;
+    border: none;
+  }
+
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+  }
+
+  .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
 .hero-image {
     flex: 1;
     text-align: center;
@@ -1184,9 +1274,47 @@ body {
 }
 
 /* Main Content */
+
+/* Pastikan header selalu di atas */
+.admin-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px; /* Sesuaikan dengan tinggi header */
+    background-color: white;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Pastikan layout utama di bawah header */
 .admin-layout {
-    margin-left: 250px;
+    display: flex;
+    margin-top: 70px; /* Sesuaikan dengan tinggi header */
+}
+
+/* Sidebar tidak lebih dari header */
+.sidebar {
+    width: 250px;
+    height: calc(100vh - 70px); /* Kurangi tinggi header */
+    position: fixed;
+    top: 70px;
+    left: 0;
+    background-color: #2c3e50;
+    color: white;
+    overflow-y: auto;
+    z-index: 900;
+}
+
+/* Main content disesuaikan agar tidak tertutup sidebar */
+.main-content {
+    margin-left: 250px; /* Sesuaikan dengan lebar sidebar */
     padding: 20px;
+    width: calc(100% - 250px);
 }
 
 .page-title {
@@ -1202,6 +1330,189 @@ body {
     gap: 20px;
     margin-bottom: 30px;
 }
+
+.admin-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .notification-icon {
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .notification-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+  }
+
+  .admin-avatar {
+    width: 32px;
+    height: 32px;
+    background: #3498db;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+  }
+
+  .admin-layout {
+    display: flex;
+  }
+
+  .sidebar {
+    width: 220px;
+    background-color: #34495e;
+    color: white;
+    min-height: 100vh;
+    padding-top: 20px;
+  }
+
+  .sidebar-menu .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .sidebar-menu .menu-item.active,
+  .sidebar-menu .menu-item:hover {
+    background-color: #2c3e50;
+  }
+
+  .menu-icon {
+    margin-right: 10px;
+  }
+
+  .main-content {
+    flex-grow: 1;
+    padding: 40px;
+  }
+
+  .page-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #2c3e50;
+  }
+
+  .detail-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+
+  .detail-card h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #2c3e50;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+  }
+
+  .detail-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+
+  .detail-card li {
+    margin-bottom: 10px;
+    color: #555;
+  }
+
+  .file-list li {
+    display: flex;
+    align-items: center;
+  }
+
+  .file-list i {
+    margin-right: 10px;
+    color: #2980b9;
+  }
+
+  .file-list a {
+    text-decoration: none;
+    color: #2980b9;
+  }
+
+  .status-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .status-waiting {
+    background-color: #f39c12;
+  }
+
+  .action-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-success {
+    background-color: #27ae60;
+    color: white;
+  }
+
+  .btn-success:hover {
+    background-color: #1e8449;
+  }
+
+  .btn-danger {
+    background-color: #e74c3c;
+    color: white;
+  }
+
+  .btn-danger:hover {
+    background-color: #c0392b;
+  }
+
+  .btn-secondary {
+    background-color: #bdc3c7;
+    color: #2c3e50;
+  }
+
+  .btn-secondary:hover {
+    background-color: #95a5a6;
+  }
+
+  @media (max-width: 768px) {
+    .admin-layout {
+      flex-direction: column;
+    }
+    .sidebar {
+      width: 100%;
+    }
+    .main-content {
+      padding: 20px;
+    }
+  }
 
 .stat-card {
     background-color: white;
@@ -1364,3 +1675,5 @@ body {
 .btn:hover {
     opacity: 0.8;
 }
+
+
