@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Bersekolah</title>
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- Pastikan path CSS benar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/image/logo-bersekolah-08.png" alt="Bersekolah Logo">
+                </a>
+            </div>
+            <div class="admin-info">
+                <div class="notification-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+                <div class="admin-profile">
+                    <div class="admin-avatar">
+                        A
+                    </div>
+                    <div class="admin-name">
+                        Admin
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-menu">
+                <a href="admin-dashboard.html" class="menu-item active">
+                    <div class="menu-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <span>Dashboard</span>
+                </a>
+                <a href="admin-pendaftar-beasiswa.html" class="menu-item">
+                    <div class="menu-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <span>Pendaftar Beasiswa</span>
+                </a>
+                <a href="admin-kelola-halaman.html" class="menu-item">
+                    <div class="menu-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <span>Kelola Halaman</span>
+                </a>
+                <a href="admin-mentor.html" class="menu-item">
+                    <div class="menu-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <span>Data Mentor</span>
+                </a>
+                <a href="admin-donasi.html" class="menu-item">
+                    <div class="menu-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <span>Donasi</span>
+                </a>
+                <a href="admin-pengaturan akun.html" class="menu-item">
+                    <div class="menu-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <span>Pengaturan Akun</span>
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Dashboard Section -->
+            <div id="dashboard-section">
+                <h1 class="page-title">Dashboard</h1>
+                
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>125</h3>
+                            <p>Total Pendaftar</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>78</h3>
+                            <p>Beasiswa Diterima</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>15</h3>
+                            <p>Mentor Aktif</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon red">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Rp 45.500.000</h3>
+                            <p>Total Donasi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Charts -->
+                <div class="charts-row">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <div class="chart-title">Pendaftar Beasiswa per Bulan</div>
+                            <div class="chart-filter">
+                                <select class="filter-select">
+                                    <option>2025</option>
+                                    <option>2024</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-bar" style="height: 30%;"></div>
+                            <div class="chart-bar" style="height: 50%;"></div>
+                            <div class="chart-bar" style="height: 70%;"></div>
+                            <div class="chart-bar" style="height: 40%;"></div>
+                            <div class="chart-bar" style="height: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <div class="chart-title">Donasi Terkumpul per Bulan</div>
+                            <div class="chart-filter">
+                                <select class="filter-select">
+                                    <option>2025</option>
+                                    <option>2024</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-bar" style="height: 20%;"></div>
+                            <div class="chart-bar" style="height: 40%;"></div>
+                            <div class="chart-bar" style="height: 60%;"></div>
+                            <div class="chart-bar" style="height: 30%;"></div>
+                            <div class="chart-bar" style="height: 32%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Applicants Table -->
+                <div class="table-card">
+                    <div class="table-header">
+                        <div class="table-title">Pendaftar Terbaru</div>
+                        <div class="table-actions">
+                            <a href="#" class="btn">Lihat Semua</a>
+                        </div>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Nama</th>
+                                <th>Jenjang</th>
+                                <th>Tanggal Daftar</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ahmad Fauzi</td>
+                                <td>SMA</td>
+                                <td>05 Mei 2025</td>
+                                <td><span class="status-badge status-waiting">Menunggu</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn btn-small btn-success">Terima</button>
+                                        <button class="btn btn-small btn-danger">Tolak</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Tambahkan data lainnya sesuai kebutuhan -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
