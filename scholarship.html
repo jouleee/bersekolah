@@ -111,69 +111,190 @@
             line-height: 1.5;
         }
         
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
+        /* Styling untuk section mentoring */
+        .mentoring-section {
+            background-color: #e9eff6; /* Warna biru muda */
+            padding: 60px 0;
+            margin: 0;
         }
         
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: #697797;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
+        .mentoring-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 40px;
         }
         
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
+        .mentoring-info {
+            flex: 1;
+            min-width: 300px;
         }
         
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
+        .mentoring-info h3 {
+            color: #354D7E;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .mentoring-info p {
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .mentoring-info ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .mentoring-info ul li {
+            margin-bottom: 10px;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .mentoring-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .mentoring-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Styling untuk testimoni */
+        .testimonial-section {
+            padding: 60px 0;
+            margin: 0;
             background-color: white;
-            border: 4px solid #85C2B1;
-            border-radius: 50%;
-            top: 15px;
+        }
+        
+        .testimonial-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 350px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/image/pattern.svg') repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .testimonial-content {
+            position: relative;
             z-index: 1;
         }
         
-        .left {
-            left: 0;
-            text-align: right;
+        .testimonial-text {
+            font-style: italic;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
         
-        .right {
-            left: 50%;
+        .testimonial-author {
+            display: flex;
+            align-items: center;
         }
         
-        .left::after {
-            right: -12px;
-        }
-        
-        .right::after {
-            left: -12px;
-        }
-        
-        .timeline-content {
-            padding: 20px;
-            background-color: white;
-            border-radius: 6px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        .timeline-content h3 {
+        .testimonial-author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            background-color: #e9eff6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
             color: #354D7E;
-            margin-bottom: 10px;
+        }
+        
+        .testimonial-author-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial-author-name {
+            font-weight: bold;
+            color: #354D7E;
+            margin-bottom: 3px;
+        }
+        
+        .testimonial-author-role {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .benefits-section {
+            background: linear-gradient(135deg, #354D7E, #406386);
+            color: white;
+            padding: 60px 0;
+            margin: 0;
+        }
+
+        .benefits-title {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        .benefits-subtitle {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .benefits-list {
+            list-style-type: disc;
+            padding-left: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .benefits-list li {
+            margin-bottom: 20px;
         }
         
         .cta-section {
@@ -323,10 +444,40 @@
         </div>
     </section>
     
+   <!-- Section Benefit Beasiswa (Simple Version) -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="benefits-title">Manfaat Program Beasiswa</h2>
+            <p class="benefits-subtitle">
+                Program Beasiswa Bersekolah memberikan beragam manfaat bagi para beswan, dirancang untuk mendukung perkembangan akademik dan personal secara holistik.
+            </p>
+
+            <ul class="benefits-list">
+                <li>
+                    <strong>Dukungan Finansial:</strong> Bantuan dana pendidikan sebesar Rp 500.000/bulan untuk memenuhi kebutuhan sekolah dan pengembangan diri.
+                </li>
+                <li>
+                    <strong>Pendampingan Mentor:</strong> Pendampingan intensif dari mentor berpengalaman yang akan membantu beswan menemukan potensi terbaik mereka.
+                </li>
+                <li>
+                    <strong>Pelatihan Soft Skill:</strong> Akses ke berbagai pelatihan pengembangan diri, seperti kepemimpinan, komunikasi, dan manajemen waktu.
+                </li>
+                <li>
+                    <strong>Sumber Belajar:</strong> Akses ke perpustakaan digital, buku teks, dan sumber belajar online untuk mendukung proses pembelajaran.
+                </li>
+                <li>
+                    <strong>Jaringan Alumnus:</strong> Bergabung dengan komunitas beswan alumni yang siap memberikan dukungan dan kesempatan networking.
+                </li>
+                <li>
+                    <strong>Kunjungan Edukatif:</strong> Kesempatan mengunjungi kampus, perusahaan, dan institusi terkemuka untuk memperluas wawasan.
+                </li>
+            </ul>
+        </div>
+    </section>
+    
     <section class="section-dark-blue">
         <div class="container">
-            <h2 class="section-title">Kegiatan Program
-            </h2>
+            <h2 class="section-title">Kegiatan Program</h2>
             
             <p class="section-description">Beasiswa Bersekolah tidak hanya memberikan bantuan finansial, tetapi juga menghadirkan berbagai kegiatan pengembangan yang mendukung para beswan untuk tumbuh dan berkembang secara holistik.</p>
             
@@ -390,65 +541,83 @@
                         <p>Kegiatan spiritual tahunan yang bersifat opsional, seperti itikaf bersama.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section Mentoring (NEW) -->
+    <section class="mentoring-section">
+        <div class="container">
+            <h2 class="section-title">Program Mentoring Bersekolah</h2>
+            <p class="section-description">Program mentoring merupakan salah satu pilar utama dari Beasiswa Bersekolah yang mendukung perkembangan akademik dan personal beswan melalui bimbingan intensif dari para mentor yang berpengalaman.</p>
+            
+            <div class="mentoring-container">
+                <div class="mentoring-info">
+                    <h3>Tentang Program Mentoring</h3>
+                    <p>Program mentoring Bersekolah menghubungkan setiap beswan dengan mentor yang akan menjadi pendamping selama masa beasiswa. Mentor adalah individu profesional yang berpengalaman dalam bidangnya dan memiliki komitmen untuk berbagi pengetahuan serta pengalaman mereka.</p>
+                    
+                    <p>Melalui program ini, beswan mendapatkan:</p>
+                    <ul>
+                        <li>Pertemuan rutin dengan mentor setiap 2 minggu sekali</li>
+                        <li>Bimbingan akademik dan pengembangan keterampilan</li>
+                        <li>Konsultasi perencanaan studi dan karier</li>
+                        <li>Dukungan motivasional dan psikologis</li>
+                        <li>Akses ke jaringan profesional mentor</li>
+                    </ul>
+                    
+                    <p>Hubungan mentor-mentee yang dibangun dalam program ini dirancang untuk bertahan lama, bahkan setelah masa beasiswa berakhir, menciptakan jaringan dukungan yang berkelanjutan untuk para beswan.</p>
+                </div>
                 
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <img src="" alt="">
-                    </div>
-                    <div class="activity-content">
-                        <h3>Mentoring</h3>
-                        <p>Setiap beswan didampingi oleh seorang mentor yang berperan sebagai pendamping dalam perjalanan pengembangan diri.</p>
-                    </div>
+                <div class="mentoring-image">
+                    <img src="assets/image/kenny-eliason-zFSo6bnZJTw-unsplash.jpg" alt="Program Mentoring Bersekolah">
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="section">
+    <!-- Section Testimoni (NEW) -->
+    <section class="testimonial-section">
         <div class="container">
-            <h2 class="section-title">Timeline Beasiswa</h2>
-            <p class="section-description">Berikut adalah timeline program beasiswa Bersekolah yang akan membantu kamu memahami seluruh proses dari pendaftaran hingga pengumuman penerima beasiswa.</p>
+            <h2 class="section-title">Apa Kata Mereka?</h2>
+            <p class="section-description">Dengarkan langsung dari para beswan tentang pengalaman mereka melalui program mentoring Bersekolah dan bagaimana program ini telah berdampak pada kehidupan mereka.</p>
             
-            <div class="timeline">
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <h3>November 2025</h3>
-                        <p>Pembukaan pendaftaran program beasiswa</p>
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Program mentoring Bersekolah benar-benar mengubah cara pandang saya terhadap pendidikan. Mentor saya tidak hanya membantu meningkatkan prestasi akademik, tetapi juga mengajarkan banyak keterampilan hidup yang tidak saya dapatkan di sekolah. Sekarang saya punya tujuan yang lebih jelas untuk masa depan."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-image">AS</div>
+                            <div class="testimonial-author-info">
+                                <p class="testimonial-author-name">Anisa Salsabila</p>
+                                <p class="testimonial-author-role">Beswan SMA, Angkatan 2024</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <h3>Desember 2025</h3>
-                        <p>Penutupan pendaftaran dan seleksi berkas</p>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Mentor saya selalu mendorong saya untuk berpikir kritis dan berani bermimpi lebih tinggi. Berkat beliau, saya belajar bahwa keterbatasan ekonomi bukanlah penghalang untuk meraih prestasi. Saya berharap suatu hari bisa menjadi mentor juga untuk adik-adik saya."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-image">RF</div>
+                            <div class="testimonial-author-info">
+                                <p class="testimonial-author-name">Raihan Firdaus</p>
+                                <p class="testimonial-author-role">Beswan SMP, Angkatan 2023</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <h3>Desember 2025</h3>
-                        <p>Wawancara calon penerima beasiswa</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <h3>Desember 2025</h3>
-                        <p>Pengumuman penerima beasiswa</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <h3>Januari 2025</h3>
-                        <p>Kegiatan Bertemu: Pertemuan perdana beswan dan mentor</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <h3>Januari - Desember 2026</h3>
-                        <p>Rangkaian kegiatan pengembangan diri</p>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Awalnya saya ragu dengan program mentoring ini, tapi setelah beberapa pertemuan, saya merasa seperti punya kakak yang bisa saya ajak diskusi tentang apa saja. Mentor saya membantu saya menemukan passion di bidang teknologi dan sekarang saya aktif di klub robotik sekolah."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-image">DP</div>
+                            <div class="testimonial-author-info">
+                                <p class="testimonial-author-name">Dimas Prayoga</p>
+                                <p class="testimonial-author-role">Beswan SMA, Angkatan 2024</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -468,8 +637,8 @@
         </div>
     </section>
     
-    <!-- Footer -->
-    <footer>
+     <!-- Footer -->
+     <footer>
         <div class="container">
             <div class="footer-container">
                 <div class="footer-column">
