@@ -90,7 +90,7 @@
             transform: scale(1.02);
         }
 
-        /* Donation Types Section */
+        /* Donation Section */
         .donation-section {
             padding: 4rem 0;
             background-color: #fff;
@@ -112,28 +112,38 @@
             line-height: 1.6;
         }
 
-        .donor-types {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .donor-card {
+        .donation-card {
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            padding: 2rem;
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
+            padding: 2.5rem;
+            max-width: 800px;
+            margin: 0 auto;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(64, 99, 134, 0.1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .donor-card:hover {
+        .donation-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .donation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #85C2B1 0%, #6AB5A1 100%);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
         }
 
         .card-icon {
@@ -144,7 +154,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            margin-right: 1rem;
         }
 
         .card-icon svg {
@@ -153,20 +163,33 @@
             fill: #406386;
         }
 
-        .donor-card h3 {
-            color: #406386;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .card-title-area {
+            flex: 1;
         }
 
-        .donor-card p {
+        .donation-card h3 {
+            color: #406386;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .donation-tagline {
+            color: #6AB5A1;
+            font-weight: 500;
+        }
+
+        .donation-card p {
             margin-bottom: 1.5rem;
             color: #555;
             line-height: 1.6;
+            font-size: 1.05rem;
         }
 
         .donor-features {
             margin-bottom: 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
         }
 
         .feature-item {
@@ -182,24 +205,79 @@
             font-weight: bold;
         }
 
-        .donation-section .donate-btn {
+        .feature-text {
+            font-size: 1rem;
+            color: #444;
+        }
+
+        .donation-highlights {
+            background-color: rgba(133, 194, 177, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-title {
+            color: #406386;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .donation-action {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .donate-btn {
             display: inline-block;
             background-color: #406386;
             color: #F3F1EF;
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
-            width: 100%;
             text-align: center;
             border: none;
+            flex-grow: 1;
         }
 
-        .donation-section .donate-btn:hover {
+        .donate-btn:hover {
             background-color: #354D7E;
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(53, 77, 126, 0.2);
+        }
+
+        .donation-contact {
+            text-align: center;
+            margin-top: 2rem;
+            color: #666;
+        }
+
+        .donation-contact a {
+            color: #406386;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .donation-contact a:hover {
+            text-decoration: underline;
+            color: #6AB5A1;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .donor-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .donation-action {
+                flex-direction: column;
+            }
         }
 
         /* CTA Section */
@@ -282,82 +360,71 @@
                 <a href="https://wa.me/6281234567890?text=Saya%20ingin%20berdonasi%20untuk%20program%20beasiswa%20Bersekolah" class="donate-btn">Berikan Donasi Sekarang</a>
             </div>
             <div class="hero-image">
-                <img src="/api/placeholder/600/400" alt="Pelajar penerima beasiswa">
+                <img src="assets/image/background_Bersekolah[1].jpg" alt="Pelajar penerima beasiswa">
             </div>
         </div>
     </section>
 
-    <!-- Donation Types Section -->
+    <!-- Donation Section HTML -->
     <section class="donation-section">
         <div class="container">
             <h2 class="section-title">Mekanisme Donasi</h2>
-            <p class="section-subtitle">Kami menyediakan dua jenis donasi yang dapat disesuaikan dengan preferensi Anda dalam mendukung para pelajar.</p>
+            <p class="section-subtitle">Kami menyediakan sistem donasi yang mudah, transparan dan berdampak langsung untuk membantu pelajar Indonesia meraih mimpinya.</p>
             
-            <div class="donor-types">
-                <!-- Regular Donor Card -->
-                <div class="donor-card">
+            <div class="donation-card">
+                <div class="card-header">
                     <div class="card-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M19 4h-4V2h-6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V6h14v14z"/>
-                            <path d="M7 11h10v2H7zm0-4h5v2H7zm0 8h10v2H7z"/>
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v6h-2zm0 8h2v2h-2z"/>
                         </svg>
                     </div>
-                    <h3>Donatur Tetap</h3>
-                    <p>Berkomitmen untuk memberikan donasi secara berkala untuk keberlanjutan program beasiswa kami.</p>
-                    
-                    <div class="donor-features">
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Donasi rutin bulanan atau triwulan</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Mendapatkan laporan penggunaan dana secara berkala</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Menjadi bagian dari Komunitas Peduli Pendidikan</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Kesempatan berinteraksi dengan penerima beasiswa</span>
-                        </div>
+                    <div class="card-title-area">
+                        <h3>Donasi Untuk Pendidikan</h3>
+                        <p class="donation-tagline">Satu langkah kecil Anda, satu lompatan besar untuk masa depan mereka</p>
                     </div>
-                    
-                    <a href="https://wa.me/6281234567890?text=Saya%20ingin%20menjadi%20donatur%20tetap%20untuk%20program%20beasiswa%20Bersekolah" class="donate-btn">Jadi Donatur Tetap</a>
                 </div>
                 
-                <!-- One-time Donor Card -->
-                <div class="donor-card">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
-                        </svg>
+                <p>Dengan berdonasi di Bersekolah, Anda tidak hanya memberikan bantuan finansial tapi juga harapan dan kesempatan bagi para pelajar Indonesia untuk mengejar impian mereka. Setiap rupiah Anda terkelola dengan transparan dan tepat sasaran.</p>
+                
+                <div class="donor-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Donasi fleksibel sesuai kemampuan Anda</span>
                     </div>
-                    <h3>Donatur Tidak Tetap</h3>
-                    <p>Memberikan kontribusi sekali waktu sesuai dengan ketersediaan dana yang Anda miliki.</p>
-                    
-                    <div class="donor-features">
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Bebas menentukan jumlah donasi</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Fleksibel dalam waktu berdonasi</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Mendapatkan konfirmasi pengelolaan dana</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Diinformasikan tentang dampak donasi Anda</span>
-                        </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Laporan penggunaan dana transparan</span>
                     </div>
-                    
-                    <a href="https://wa.me/6281234567890?text=Saya%20ingin%20berdonasi%20sekali%20untuk%20program%20beasiswa%20Bersekolah" class="donate-btn">Donasi Sekali</a>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Proses donasi cepat dan mudah</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">100% dana tersalurkan ke penerima beasiswa</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Update perkembangan penerima beasiswa</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span class="feature-text">Bergabung dengan komunitas peduli pendidikan</span>
+                    </div>
                 </div>
+                
+                <div class="donation-highlights">
+                    <h4 class="highlight-title">Mengapa donasi Anda penting:</h4>
+                    <p>Tahukah Anda bahwa Rp500.000 sudah dapat membantu seorang pelajar membeli perlengkapan sekolah selama satu semester? Donasi Anda, berapapun nominalnya, memiliki dampak nyata untuk membantu pendidikan Indonesia.</p>
+                </div>
+                
+                <div class="donation-action">
+                    <a href="https://wa.me/6281234567890?text=Saya%20ingin%20berdonasi%20untuk%20program%20beasiswa%20Bersekolah" class="donate-btn">Berikan Donasi Sekarang</a>
+                </div>
+            </div>
+            
+            <div class="donation-contact">
+                <p>Butuh informasi lebih lanjut? <a href="info-contact.html">Hubungi tim kami</a> atau telpon di <a href="tel:+6281234567890">+62 812-3456-7890</a></p>
             </div>
         </div>
     </section>
