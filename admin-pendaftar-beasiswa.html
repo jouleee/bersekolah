@@ -8,11 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
-
-   <div>
     <!-- Header -->
-    <header class="admin-header">
+    <header>
         <div class="container header-container">
             <div class="logo">
                 <a href="index.html">
@@ -31,10 +28,8 @@
             </div>
         </div>
     </header>
-   </div>
 
-   <div>
-        <!-- Main Layout -->
+    <!-- Main Layout -->
     <div class="admin-layout">
         <!-- Sidebar -->
         <div class="sidebar">
@@ -69,7 +64,7 @@
                     </div>
                     <span>Donasi</span>
                 </a>
-                <a href="admin-pengaturan-akun.html" class="menu-item">
+                <a href="admin-pengaturan akun.html" class="menu-item">
                     <div class="menu-icon">
                         <i class="fas fa-cog"></i>
                     </div>
@@ -99,20 +94,39 @@
                             <th>Tanggal Daftar</th>
                             <th>Status</th>
                             <th>Aksi</th>
-                            <th>Detail</th>
                         </tr>
                     </thead>
-                    <tbody id="data-body">
-                        
+                    <tbody>
+                        <tr>
+                            <td>Siti Nurhaliza</td>
+                            <td>SMP</td>
+                            <td>siti@mail.com</td>
+                            <td>03 Mei 2025</td>
+                            <td><span class="status-badge status-approved">Diterima</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn btn-small btn-danger">Tolak</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ahmad Fauzi</td>
+                            <td>SMA</td>
+                            <td>ahmad@mail.com</td>
+                            <td>05 Mei 2025</td>
+                            <td><span class="status-badge status-waiting">Menunggu</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn btn-small btn-success">Terima</button>
+                                    <button class="btn btn-small btn-danger">Tolak</button>
+                                </div>
+                            </td>
+                        </tr>
                         <!-- Tambahkan baris pendaftar lainnya di sini -->
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-   </div>
-
-
-    <script src="assets/js/getUser.js"></script>
 </body>
 </html>

@@ -4,30 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Bersekolah</title>
-    <!-- Add a proper favicon -->
-    <link rel="icon" href="assets/image/favicon.ico" type="image/x-icon">
-    <!-- Load CSS before other resources -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- Pastikan path CSS benar -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
-    <header class="admin-header">
+    <header>
         <div class="container header-container">
             <div class="logo">
-                <a href="index.html" aria-label="Bersekolah Homepage">
+                <a href="index.html">
                     <img src="assets/image/logo-bersekolah-08.png" alt="Bersekolah Logo">
                 </a>
             </div>
             <div class="admin-info">
                 <div class="notification-icon">
-                    <button aria-label="Notifications" title="Lihat Notifikasi">
-                        <i class="fas fa-bell"></i>
-                        <span class="notification-badge" aria-label="3 unread notifications">3</span>
-                    </button>
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
                 </div>
                 <div class="admin-profile">
-                    <div class="admin-avatar" aria-label="Admin Profile">
+                    <div class="admin-avatar">
                         A
                     </div>
                     <div class="admin-name">
@@ -41,9 +36,9 @@
     <!-- Main Layout -->
     <div class="admin-layout">
         <!-- Sidebar -->
-        <nav class="sidebar" aria-label="Main Navigation">
+        <div class="sidebar">
             <div class="sidebar-menu">
-                <a href="admin-dashboard.html" class="menu-item active" aria-current="page">
+                <a href="admin-dashboard.html" class="menu-item active">
                     <div class="menu-icon">
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
@@ -73,26 +68,27 @@
                     </div>
                     <span>Donasi</span>
                 </a>
-                <a href="admin-pengaturan-akun.html" class="menu-item">
+                <a href="admin-pengaturan akun.html" class="menu-item">
                     <div class="menu-icon">
                         <i class="fas fa-cog"></i>
                     </div>
                     <span>Pengaturan Akun</span>
                 </a>
             </div>
-        </nav>
+        </div>
+
 
         <!-- Main Content -->
-        <main class="main-content">
+        <div class="main-content">
             <!-- Dashboard Section -->
-            <section id="dashboard-section">
+            <div id="dashboard-section">
                 <h1 class="page-title">Dashboard</h1>
                 
                 <!-- Stats Cards -->
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-icon blue">
-                            <i class="fas fa-user-graduate" aria-hidden="true"></i>
+                            <i class="fas fa-user-graduate"></i>
                         </div>
                         <div class="stat-info">
                             <h3>125</h3>
@@ -101,7 +97,7 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon green">
-                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <i class="fas fa-check-circle"></i>
                         </div>
                         <div class="stat-info">
                             <h3>78</h3>
@@ -110,7 +106,7 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon orange">
-                            <i class="fas fa-users" aria-hidden="true"></i>
+                            <i class="fas fa-users"></i>
                         </div>
                         <div class="stat-info">
                             <h3>15</h3>
@@ -119,7 +115,7 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon red">
-                            <i class="fas fa-heart" aria-hidden="true"></i>
+                            <i class="fas fa-heart"></i>
                         </div>
                         <div class="stat-info">
                             <h3>Rp 45.500.000</h3>
@@ -134,52 +130,36 @@
                         <div class="chart-header">
                             <div class="chart-title">Pendaftar Beasiswa per Bulan</div>
                             <div class="chart-filter">
-                                <label for="year-filter-1" class="sr-only">Pilih Tahun</label>
-                                <select id="year-filter-1" class="filter-select">
-                                    <option value="2025">2025</option>
-                                    <option value="2024">2024</option>
+                                <select class="filter-select">
+                                    <option>2025</option>
+                                    <option>2024</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="chart-container" aria-label="Grafik batang pendaftar beasiswa bulanan">
-                            <div class="chart-bar" style="height: 30%;" aria-label="Januari: 30%"></div>
-                            <div class="chart-bar" style="height: 50%;" aria-label="Februari: 50%"></div>
-                            <div class="chart-bar" style="height: 70%;" aria-label="Maret: 70%"></div>
-                            <div class="chart-bar" style="height: 40%;" aria-label="April: 40%"></div>
-                            <div class="chart-bar" style="height: 60%;" aria-label="Mei: 60%"></div>
-                        </div>
-                        <div class="chart-labels">
-                            <span>Jan</span>
-                            <span>Feb</span>
-                            <span>Mar</span>
-                            <span>Apr</span>
-                            <span>Mei</span>
+                        <div class="chart-container">
+                            <div class="chart-bar" style="height: 30%;"></div>
+                            <div class="chart-bar" style="height: 50%;"></div>
+                            <div class="chart-bar" style="height: 70%;"></div>
+                            <div class="chart-bar" style="height: 40%;"></div>
+                            <div class="chart-bar" style="height: 60%;"></div>
                         </div>
                     </div>
                     <div class="chart-card">
                         <div class="chart-header">
                             <div class="chart-title">Donasi Terkumpul per Bulan</div>
                             <div class="chart-filter">
-                                <label for="year-filter-2" class="sr-only">Pilih Tahun</label>
-                                <select id="year-filter-2" class="filter-select">
-                                    <option value="2025">2025</option>
-                                    <option value="2024">2024</option>
+                                <select class="filter-select">
+                                    <option>2025</option>
+                                    <option>2024</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="chart-container" aria-label="Grafik batang donasi bulanan">
-                            <div class="chart-bar" style="height: 20%;" aria-label="Januari: 20%"></div>
-                            <div class="chart-bar" style="height: 40%;" aria-label="Februari: 40%"></div>
-                            <div class="chart-bar" style="height: 60%;" aria-label="Maret: 60%"></div>
-                            <div class="chart-bar" style="height: 30%;" aria-label="April: 30%"></div>
-                            <div class="chart-bar" style="height: 32%;" aria-label="Mei: 32%"></div>
-                        </div>
-                        <div class="chart-labels">
-                            <span>Jan</span>
-                            <span>Feb</span>
-                            <span>Mar</span>
-                            <span>Apr</span>
-                            <span>Mei</span>
+                        <div class="chart-container">
+                            <div class="chart-bar" style="height: 20%;"></div>
+                            <div class="chart-bar" style="height: 40%;"></div>
+                            <div class="chart-bar" style="height: 60%;"></div>
+                            <div class="chart-bar" style="height: 30%;"></div>
+                            <div class="chart-bar" style="height: 32%;"></div>
                         </div>
                     </div>
                 </div>
@@ -189,65 +169,38 @@
                     <div class="table-header">
                         <div class="table-title">Pendaftar Terbaru</div>
                         <div class="table-actions">
-                            <a href="admin-pendaftar-beasiswa.html" class="btn">Lihat Semua</a>
+                            <a href="#" class="btn">Lihat Semua</a>
                         </div>
                     </div>
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <caption class="sr-only">Daftar pendaftar beasiswa terbaru</caption>
-                            <thead>
-                                <tr>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">Jenjang</th>
-                                    <th scope="col">Tanggal Daftar</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Ahmad Fauzi</td>
-                                    <td>SMA</td>
-                                    <td>05 Mei 2025</td>
-                                    <td><span class="status-badge status-waiting">Menunggu</span></td>
-                                    <td>
-                                        <div class="action-buttons">
-                                            <button class="btn btn-small btn-success" aria-label="Terima Ahmad Fauzi">Terima</button>
-                                            <button class="btn btn-small btn-danger" aria-label="Tolak Ahmad Fauzi">Tolak</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Siti Rahayu</td>
-                                    <td>S1</td>
-                                    <td>03 Mei 2025</td>
-                                    <td><span class="status-badge status-accepted">Diterima</span></td>
-                                    <td>
-                                        <div class="action-buttons">
-                                            <button class="btn btn-small btn-info" aria-label="Lihat detail Siti Rahayu">Detail</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Budi Santoso</td>
-                                    <td>SMP</td>
-                                    <td>02 Mei 2025</td>
-                                    <td><span class="status-badge status-rejected">Ditolak</span></td>
-                                    <td>
-                                        <div class="action-buttons">
-                                            <button class="btn btn-small btn-info" aria-label="Lihat detail Budi Santoso">Detail</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Nama</th>
+                                <th>Jenjang</th>
+                                <th>Tanggal Daftar</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ahmad Fauzi</td>
+                                <td>SMA</td>
+                                <td>05 Mei 2025</td>
+                                <td><span class="status-badge status-waiting">Menunggu</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn btn-small btn-success">Terima</button>
+                                        <button class="btn btn-small btn-danger">Tolak</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Tambahkan data lainnya sesuai kebutuhan -->
+                        </tbody>
+                    </table>
                 </div>
-            </section>
-        </main>
+            </div>
+        </div>
     </div>
-
-    <!-- Scripts - load at the end for better performance -->
-    <script src="assets/js/dashboard.js"></script>
 </body>
 </html>

@@ -67,6 +67,82 @@
             color: #406386;
             margin-bottom: 15px;
         }
+
+       /* Hero Section for Scholarship Page */
+        .hero-scholarship {
+            background-color: #354D7E;
+            color: white;
+            padding: 100px 0 120px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero-scholarship::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #fff;
+            clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 100%);
+            z-index: 1;
+        }
+
+        .hero-scholarship .container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-scholarship h1 {
+            color: white;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .hero-scholarship h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #85C2B1;
+            border-radius: 2px;
+        }
+
+        .hero-scholarship p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-top: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .hero-scholarship {
+                padding: 80px 0 100px;
+            }
+            
+            .hero-scholarship h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-scholarship p {
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
+        }
         
         .activity-cards {
             display: grid;
@@ -417,15 +493,17 @@
                     <li><a href="scholarship.html">Program Beasiswa</a></li>
                     <li><a href="donation.html">Donasi</a></li>
                     <li><a href="info-contact.html">Kontak</a></li>
+                    <li><a href="info-contact.html">Artikel</a></li>
                 </ul>
             </nav>
-            <div class="nav-donate">
-                <a href="#" class="btn">Bergabung Bersama</a>
+            <div class="nav-donate">    
+                <a href="direct.html" class="btn">Bergabung Bersama</a>
             </div>
         </div>
     </header>
 
-    <section class="hero">
+    <!-- Updated HTML with hero-scholarship class -->
+    <section class="hero-scholarship">
         <div class="container">
             <h1>Program Beasiswa Bersekolah</h1>
             <p>Memberikan kesempatan pendidikan yang lebih baik bagi pelajar SMP-SMA yang memiliki semangat tinggi untuk bersekolah</p>
@@ -461,9 +539,6 @@
                 </li>
                 <li>
                     <strong>Pelatihan Soft Skill:</strong> Akses ke berbagai pelatihan pengembangan diri, seperti kepemimpinan, komunikasi, dan manajemen waktu.
-                </li>
-                <li>
-                    <strong>Sumber Belajar:</strong> Akses ke perpustakaan digital, buku teks, dan sumber belajar online untuk mendukung proses pembelajaran.
                 </li>
                 <li>
                     <strong>Jaringan Alumnus:</strong> Bergabung dengan komunitas beswan alumni yang siap memberikan dukungan dan kesempatan networking.

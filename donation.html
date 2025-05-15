@@ -6,279 +6,279 @@
     <title>Donasi - Bersekolah</title>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <style>
-        /* Hero Section Styles */
-        .hero-donation-section {
-            background: linear-gradient(135deg, #406386 0%, #354D7E 100%);
-            padding: 0;
-            color: #F3F1EF;
-            border-radius: 0;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(53, 77, 126, 0.2);
-            margin: 0;
-        }
-
-        .hero-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 40px; /* tambah napas kiri-kanan */
-            gap: 40px; /* jarak antar teks dan gambar */
-        }
-
-        .hero-content {
-            flex: 1;
-            max-width: 600px; /* batas lebar teks */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            color: #F3F1EF;
-        }
-
-        .hero-description {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            color: rgba(243, 241, 239, 0.9);
-        }
-
-        .donate-btn {
-            display: inline-block;
-            background-color: #FFFFFF; /* tombol putih */
-            color: #354D7E; /* teks biru tua */
-            font-weight: 500; /* tidak terlalu bold */
-            padding: 12px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            border: 2px solid #354D7E;
-            margin-top: 10px;
-            text-align: left; /* jaga-jaga */
-        }
-
-        .donate-btn:hover {
-            background-color: #6AB5A1;
-            color: #ffffff;
-        }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 0;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            border: none;
-            transition: transform 0.3s ease;
-        }
-
-        .hero-image img:hover {
-            transform: scale(1.02);
-        }
-
-        /* Donation Section */
-        .donation-section {
-            padding: 4rem 0;
-            background-color: #fff;
-        }
-
-        .section-title {
-            text-align: center;
-            color: #354D7E;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .donation-card {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            padding: 2.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(64, 99, 134, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .donation-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .donation-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(180deg, #85C2B1 0%, #6AB5A1 100%);
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(64, 99, 134, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-        }
-
-        .card-icon svg {
-            width: 30px;
-            height: 30px;
-            fill: #406386;
-        }
-
-        .card-title-area {
-            flex: 1;
-        }
-
-        .donation-card h3 {
-            color: #406386;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .donation-tagline {
-            color: #6AB5A1;
-            font-weight: 500;
-        }
-
-        .donation-card p {
-            margin-bottom: 1.5rem;
-            color: #555;
-            line-height: 1.6;
-            font-size: 1.05rem;
-        }
-
-        .donor-features {
-            margin-bottom: 1.5rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 0.8rem;
-        }
-
-        .feature-icon {
-            color: #85C2B1;
-            margin-right: 0.8rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .feature-text {
-            font-size: 1rem;
-            color: #444;
-        }
-
-        .donation-highlights {
-            background-color: rgba(133, 194, 177, 0.1);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-        }
-
-        .highlight-title {
-            color: #406386;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-        }
-
-        .donation-action {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .donate-btn {
-            display: inline-block;
-            background-color: #406386;
-            color: #F3F1EF;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            text-align: center;
-            border: none;
-            flex-grow: 1;
-        }
-
-        .donate-btn:hover {
-            background-color: #354D7E;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(53, 77, 126, 0.2);
-        }
-
-        .donation-contact {
-            text-align: center;
-            margin-top: 2rem;
-            color: #666;
-        }
-
-        .donation-contact a {
-            color: #406386;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .donation-contact a:hover {
-            text-decoration: underline;
-            color: #6AB5A1;
-        }
-
-        /* Responsiveness */
-        @media (max-width: 768px) {
-            .donor-features {
-                grid-template-columns: 1fr;
+            /* Hero Section Styles */
+            .hero-donation-section {
+                background: linear-gradient(135deg, #406386 0%, #354D7E 100%);
+                padding: 0;
+                color: #F3F1EF;
+                border-radius: 0;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(53, 77, 126, 0.2);
+                margin: 0;
             }
-            
-            .donation-action {
+
+            .hero-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 80px 40px; /* tambah napas kiri-kanan */
+                gap: 40px; /* jarak antar teks dan gambar */
+            }
+
+            .hero-content {
+                flex: 1;
+                max-width: 600px; /* batas lebar teks */
+                display: flex;
                 flex-direction: column;
+                justify-content: center;
             }
-        }
+
+            .hero-content h1 {
+                font-size: 3rem;
+                font-weight: 700;
+                margin-bottom: 20px;
+                line-height: 1.2;
+                color: #F3F1EF;
+            }
+
+            .hero-description {
+                font-size: 1.2rem;
+                line-height: 1.8;
+                margin-bottom: 30px;
+                color: rgba(243, 241, 239, 0.9);
+            }
+
+            .donate-btn {
+                display: inline-block;
+                background-color: #FFFFFF; /* tombol putih */
+                color: #354D7E; /* teks biru tua */
+                font-weight: 500; /* tidak terlalu bold */
+                padding: 12px 24px;
+                border-radius: 50px;
+                text-decoration: none;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+                border: 2px solid #354D7E;
+                margin-top: 10px;
+                text-align: left; /* jaga-jaga */
+            }
+
+            .donate-btn:hover {
+                background-color: #6AB5A1;
+                color: #ffffff;
+            }
+
+            .hero-image {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .hero-image img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 0;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+                border: none;
+                transition: transform 0.3s ease;
+            }
+
+            .hero-image img:hover {
+                transform: scale(1.02);
+            }
+
+            /* Donation Section */
+            .donation-section {
+                padding: 4rem 0;
+                background-color: #fff;
+            }
+
+            .section-title {
+                text-align: center;
+                color: #354D7E;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .section-subtitle {
+                text-align: center;
+                color: #666;
+                max-width: 700px;
+                margin: 0 auto 3rem;
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+
+            .donation-card {
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                padding: 2.5rem;
+                max-width: 800px;
+                margin: 0 auto;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                border: 1px solid rgba(64, 99, 134, 0.1);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .donation-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .donation-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 5px;
+                height: 100%;
+                background: linear-gradient(180deg, #85C2B1 0%, #6AB5A1 100%);
+            }
+
+            .card-header {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1.5rem;
+            }
+
+            .card-icon {
+                width: 60px;
+                height: 60px;
+                background-color: rgba(64, 99, 134, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 1rem;
+            }
+
+            .card-icon svg {
+                width: 30px;
+                height: 30px;
+                fill: #406386;
+            }
+
+            .card-title-area {
+                flex: 1;
+            }
+
+            .donation-card h3 {
+                color: #406386;
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .donation-tagline {
+                color: #6AB5A1;
+                font-weight: 500;
+            }
+
+            .donation-card p {
+                margin-bottom: 1.5rem;
+                color: #555;
+                line-height: 1.6;
+                font-size: 1.05rem;
+            }
+
+            .donor-features {
+                margin-bottom: 1.5rem;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .feature-item {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 0.8rem;
+            }
+
+            .feature-icon {
+                color: #85C2B1;
+                margin-right: 0.8rem;
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+
+            .feature-text {
+                font-size: 1rem;
+                color: #444;
+            }
+
+            .donation-highlights {
+                background-color: rgba(133, 194, 177, 0.1);
+                padding: 1.5rem;
+                border-radius: 8px;
+                margin-bottom: 1.5rem;
+            }
+
+            .highlight-title {
+                color: #406386;
+                font-weight: 600;
+                margin-bottom: 0.8rem;
+                font-size: 1.1rem;
+            }
+
+            .donation-action {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .donate-btn {
+                display: inline-block;
+                background-color: #406386;
+                color: #F3F1EF;
+                padding: 1rem 2rem;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s;
+                text-align: center;
+                border: none;
+                flex-grow: 1;
+            }
+
+            .donate-btn:hover {
+                background-color: #354D7E;
+                transform: translateY(-3px);
+                box-shadow: 0 10px 20px rgba(53, 77, 126, 0.2);
+            }
+
+            .donation-contact {
+                text-align: center;
+                margin-top: 2rem;
+                color: #666;
+            }
+
+            .donation-contact a {
+                color: #406386;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            .donation-contact a:hover {
+                text-decoration: underline;
+                color: #6AB5A1;
+            }
+
+            /* Responsiveness */
+            @media (max-width: 768px) {
+                .donor-features {
+                    grid-template-columns: 1fr;
+                }
+                
+                .donation-action {
+                    flex-direction: column;
+                }
+            }
 
         /* CTA Section */
         .cta-section {
@@ -343,10 +343,11 @@
                     <li><a href="scholarship.html">Program Beasiswa</a></li>
                     <li><a href="donation.html">Donasi</a></li>
                     <li><a href="info-contact.html">Kontak</a></li>
+                    <li><a href="info-contact.html">Artikel</a></li>
                 </ul>
             </nav>
-            <div class="nav-donate">
-                <a href="#" class="btn">Bergabung Bersama</a>
+            <div class="nav-donate">    
+                <a href="direct.html" class="btn">Bergabung Bersama</a>
             </div>
         </div>
     </header>

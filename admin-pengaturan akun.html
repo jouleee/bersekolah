@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Donasi - Admin Dashboard Bersekolah</title>
+    <title>Pengaturan Akun - Admin Dashboard Bersekolah</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
@@ -75,48 +75,32 @@
 
         <!-- Main Content -->
         <div class="main-content">
-            <h1 class="page-title">Riwayat Donasi</h1>
+            <h1 class="page-title">Pengaturan Akun</h1>
 
-            <!-- Donasi Table -->
-            <div class="table-card">
-                <div class="table-header">
-                    <div class="table-title">Daftar Donasi Masuk</div>
-                </div>
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Nama Donatur</th>
-                            <th>Email</th>
-                            <th>Jumlah Donasi</th>
-                            <th>Tanggal</th>
-                            <th>Metode Pembayaran</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Siti Aminah</td>
-                            <td>sitiaminah@gmail.com</td>
-                            <td>Rp 1.000.000</td>
-                            <td>03 Mei 2025</td>
-                            <td>Transfer Bank</td>
-                        </tr>
-                        <tr>
-                            <td>Anonim</td>
-                            <td>-</td>
-                            <td>Rp 500.000</td>
-                            <td>02 Mei 2025</td>
-                            <td>QRIS</td>
-                        </tr>
-                        <tr>
-                            <td>Fajar Nugroho</td>
-                            <td>fajarn@gmail.com</td>
-                            <td>Rp 250.000</td>
-                            <td>01 Mei 2025</td>
-                            <td>OVO</td>
-                        </tr>
-                        <!-- Tambahkan donasi lainnya sesuai kebutuhan -->
-                    </tbody>
-                </table>
+            <div class="settings-form">
+                <form>
+                    <div class="form-group">
+                        <label for="admin-name">Nama Admin</label>
+                        <input type="text" id="admin-name" value="Admin Bersekolah" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="admin-email">Email</label>
+                        <input type="email" id="admin-email" value="admin@bersekolah.com" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="admin-password">Kata Sandi Baru</label>
+                        <input type="password" id="admin-password" placeholder="Masukkan kata sandi baru" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="admin-password-confirm">Konfirmasi Kata Sandi</label>
+                        <input type="password" id="admin-password-confirm" placeholder="Ulangi kata sandi baru" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                </form>
             </div>
         </div>
     </div>
