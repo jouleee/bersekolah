@@ -11,8 +11,7 @@ async function ambilData() {
         const tbody = document.getElementById("data-body");
         tbody.innerHTML = ""; // Clear existing rows
         // console.log("API response:", result);
-
-
+        
         result.data.forEach(item => {
             const tr = document.createElement("tr");
 

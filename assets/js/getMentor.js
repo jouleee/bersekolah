@@ -1,32 +1,33 @@
 async function ambilData() {
     try {
-        const response = await fetch("http://127.0.0.1:8000/api/halaman");
+        const response = await fetch("http://127.0.0.1:8000/api/mentor");
 
         if (!response.ok) {
             throw new Error("Network response was not ok " + response.statusText);
         }
         
         const result = await response.json();
-        // console.log("API response:", result);
         const tbody = document.getElementById("data-body");
-        tbody.innerHTML = ""; // Clear existing rows
-        // console.log("API response:", result);
-
+        tbody.innerHTML = ""; // Kosongkan dulu isi tabel
 
         result.data.forEach(item => {
             const tr = document.createElement("tr");
 
-            const tdjudul_halaman = document.createElement("td");
-            tdjudul_halaman.textContent = item.judul_halaman;
+            const tdnama = document.createElement("td");
+            tdnama.textContent = item.nama ?? "Ajamm";
 
-            const tdslug = document.createElement("td");
-            tdslug.textContent = item.slug;
+            const tdemail = document.createElement("td");
+            tdemail.textContent = item.email ?? "-";
 
-            const tdcreated_at = document.createElement("td");
-            tdcreated_at.textContent = item.created_at;
+            const tdbidang = document.createElement("td");
+            tdbidang.textContent = item.bidang_keahlian ?? "-";
+
+            const tdtanggal = document.createElement("td");
+            const date = new Date(item.created_at);
+            tdtanggal.textContent = date.toLocaleDateString("id-ID");
 
             const tdstatus = document.createElement("td");
-            tdstatus.textContent = item.status;
+            tdstatus.innerHTML = `<span class="badge badge-success">Aktif</span>`; // kamu bisa ganti sesuai status sebenarnya
 
             const tdaksi = document.createElement("td");
             tdaksi.innerHTML = `
@@ -34,20 +35,16 @@ async function ambilData() {
                 <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
             `;
 
-            //  <th>Judul Halaman</th>
-            //  <th>Slug</th>
-            //  <th>Tanggal Dibuat</th>
-            //  <th>Status</th>
-
-            tr.appendChild(tdjudul_halaman);
-            tr.appendChild(tdslug);
-            tr.appendChild(tdcreated_at);
+            tr.appendChild(tdnama);
+            tr.appendChild(tdemail);
+            tr.appendChild(tdbidang);
+            tr.appendChild(tdtanggal);
             tr.appendChild(tdstatus);
             tr.appendChild(tdaksi);
+
             tbody.appendChild(tr);
         });
 
-        // console.log(result.data); // Optional: log the result
     } catch (error) {
         console.error("There was a problem with the fetch operation:", error);
     }
